@@ -3,18 +3,19 @@
 import os
 import sys
 
-from blogger.settings import base
+from blogger_app.settings import base
 
 settings_module = "DJANGO_SETTINGS_MODULE"
+app_name = "blogger_app"
 
 
 def main():
     """Run administrative tasks."""
 
     if base.DEBUG:
-        os.environ.setdefault(settings_module, "blogger.settings.local")
+        os.environ.setdefault(settings_module, f"{app_name}.settings.local")
     else:
-        os.environ.setdefault(settings_module, "blogger.settings.production")
+        os.environ.setdefault(settings_module, f"{app_name}.settings.production")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
