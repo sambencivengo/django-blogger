@@ -17,7 +17,7 @@ class Post(models.Model):
     )
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
-    created_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=options, default="draft")
 
     class Meta:
