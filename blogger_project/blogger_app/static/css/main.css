@@ -17,3 +17,7 @@ body {
   font-style: normal;
   font-family: "Anonymous Pro", monospace;
 }
+
+.fw-700 {
+  font-weight: 700;
+}
